@@ -1,5 +1,5 @@
 #
-# Copyright (C) Project-Xtended
+# Copyright (C) Project-Awaken
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -7,33 +7,29 @@
 # Inherit framework first
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
 # Inherit from beryllium device
 $(call inherit-product, device/xiaomi/beryllium/device.mk)
 
-# Inherit some common xtended stuff.
-$(call inherit-product, vendor/xtended/config/common_full_phone.mk)
+# Inherit some common awaken stuff.
+$(call inherit-product, vendor/awaken/config/common_full_phone.mk)
 
-# Project-Xtended Specific Flags
-XTENDED_BUILD_MAINTAINER := 𝔸𝕂𝕊ℍ𝔸𝕋
-XTENDED_BUILD_TYPE := OFFICIAL
+# Project-Awaken Specific Flags
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_USES_BLUR := false
 TARGET_BUILD_APERTURE_CAMERA := false
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
 
-# Gapps
-WITH_GAPPS := true
-TARGET_INCLUDE_NGA := true
-
-# SOC
-PROCESSOR_MODEL := SDM845
+# GApps
+TARGET_GAPPS_ARCH := arm64
+USE_GAPPS := true
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := xtended_beryllium
+PRODUCT_NAME := awaken_beryllium
 PRODUCT_DEVICE := beryllium
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := POCO F1
